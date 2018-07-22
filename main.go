@@ -38,7 +38,7 @@ func main() {
 		cookie(w, "srv", "rv", false)
 		fmt.Printf("hi %q guy with %q\n", l.Language, l.UserAgent)
 		// Tries to continue the tracking with JavaScript events.
-		http.ServeFile(w, r, "tracker.html")
+		http.ServeFile(w, r, "./static/tracker.html")
 	})
 
 	// Handles events to fake a JavaScript call to an other audience manager.
@@ -79,7 +79,7 @@ func main() {
 			return
 		}
 		// Landing page
-		http.ServeFile(w, r, "index.html")
+		http.ServeFile(w, r, "./static/index.html")
 	})
 
 	// Launches the server on the given port (see the environment var named BEACON_PORT).
