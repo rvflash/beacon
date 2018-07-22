@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Beacon test</title>
+    <meta charset="utf-8" />
+    <script>
+        var log = {
+            ua: navigator.userAgent,
+            lang: navigator.language,
+
+        };
+        // Also see event named "visibilitychange" for mobile devices.
+        window.addEventListener("unload", logData, false);
+        function logData() {
+            navigator.sendBeacon("/log", JSON.stringify(log));
+        }
+    </script>
+</head>
+<body>
+<h1>Hello world!</h1>
+<p><a href="/next" title="Continues">More</a> or <a href="https://www.google.com" title="Goes away">bye</a> ?</p>
+</body>
+</html>

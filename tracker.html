@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<title>Called by navigator.sendBeacon()</title>
+<script>
+    // Try to do stuff with JavaScript on page called by beacon.
+    // > Create a cookie
+    document.cookie = "cli="+navigator.platform;
+    // > Create a image to continue to track it.
+    var img = new Image(0, 0);
+    img.src = '/audience';
+</script>
+<!-- https://google.github.io/styleguide/htmlcssguide.html#Optional_Tags -->
